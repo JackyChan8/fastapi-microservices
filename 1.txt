@@ -1,0 +1,2 @@
+# Proto Commands
+python -m grpc_tools.protoc -I ./src/protobuf/auth --python_out=./src/protobuf/auth/ --grpc_python_out=./src/protobuf/auth/ auth.proto
