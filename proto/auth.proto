@@ -18,12 +18,7 @@ message ResponseCreateUser {
 // Response after Login
 message ResponseLogin { string access_token = 1; }
 
-// Request 'Create User'
-service RequestCreateUser {
+service RequestAuthUser {
   rpc CreateUser (RequestDataUser) returns (ResponseCreateUser) {}
-}
-
-// Request 'Login'
-service RequestLoginUser {
   rpc LoginUser (RequestDataUser) returns (ResponseLogin) {}
 }

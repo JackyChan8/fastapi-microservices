@@ -19,3 +19,12 @@ class UserCreate(UserBase):
         if 'password' in values.data and v != values.data.get('password'):
             raise ValueError('passwords do not match')
         return v
+
+
+class UserLogin(UserBase):
+    password: str = Field(
+        min_length=8,
+        max_length=100,
+        title='Password',
+        description='Password User'
+    )

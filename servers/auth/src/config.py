@@ -12,6 +12,11 @@ class Settings(BaseSettings):
     DATABASE_HOST: str
     DATABASE_PORT: int
 
+    # Auth Settings
+    JWT_SECRET_KEY: SecretStr
+    ALGORITHM: str
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
+
     def get_database_url(self):
         return PostgresDsn.build(
             scheme=self.DATABASE_PROTOCOL,

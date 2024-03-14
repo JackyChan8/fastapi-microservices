@@ -11,7 +11,7 @@ LISTENER_ADDR = '[::]:50000'
 
 async def serve() -> None:
     server = grpc.aio.server()
-    auth_pb2_grpc.add_RequestCreateUserServicer_to_server(AuthService(), server)
+    auth_pb2_grpc.add_RequestAuthUserServicer_to_server(AuthService(), server)
     server.add_insecure_port(LISTENER_ADDR)
     logger.info("Starting server on %s", LISTENER_ADDR)
     await server.start()
